@@ -11,10 +11,10 @@ function src.player.update(dt)
         print("tick")
         gravityTimer = 0
         tryMove(0,1)
+        player.y = math.max(1,math.min(#world, player.y))
     end
 
     cam:lookAt(player.x * tileSize + .5 * tileSize, player.y * tileSize + 1*tileSize)
-    player.y = math.max(1,math.min(#world, player.y))
 end
 
 return src.player.update
