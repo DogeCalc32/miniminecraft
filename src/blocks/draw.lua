@@ -8,8 +8,8 @@ function src.blocks.draw()
                 love.graphics.setColor(1,1,1)
                 local sprite = assets.blocks[column]
 
-                local x = (columnIndex-1) * tileSize
-                local y = (rowIndex-1) * tileSize
+                local x = (columnIndex) * tileSize
+                local y = (rowIndex) * tileSize
                 local imageWidth, imageHeight = sprite:getDimensions()
                 local scaleX =  tileSize / imageWidth
                 local scaleY =  tileSize / imageHeight

@@ -19,18 +19,19 @@ world = {
     {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
 }
 
-function canMove(tx, ty)
-    if world[ty][tx] > 0 then
-        return false
-    elseif world[ty][tx] == 0 then
-        return true
+local function canMove(tx, ty)
+    if ty > player.y then
+        ty = ty + 1
     end
+    return world[ty][tx] == 0
 end
 
 function tryMove(dx, dy)
     local newX = player.x + dx
     local newY = player.y + dy
-
+    if world[newY][newX]==nil then
+        return
+    end
     if canMove(newX, newY) then
         player.x = newX
         player.y = newY

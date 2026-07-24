@@ -10,9 +10,7 @@ function src.player.update(dt)
     if gravityTimer >= gravityDelay then
         print("tick")
         gravityTimer = 0
-        if canMove(player.x, player.y + 2) then
-            -- player.y = player.y + 1
-        end
+        tryMove(0,1)
     end
 
     cam:lookAt(player.x * tileSize + .5 * tileSize, player.y * tileSize + 1*tileSize)

@@ -8,9 +8,9 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     json = require("libraries/json")
-    sti = require 'libraries/sti'
+    -- sti = require 'libraries/sti'
     camera = require("libraries/camera")
-    wf = require "libraries/windfield"
+    -- wf = require "libraries/windfield"
     saveLibraries = require("src/save")
     cam = camera()
 
