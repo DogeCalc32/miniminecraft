@@ -16,24 +16,7 @@ function love.load()
 
     world = require("data/world")
 
-    src = {}
-
-    src.blocks = {
-        draw = require("src/blocks/draw"),
-    }
-    src.player = {
-        draw = require("src/player/draw"),
-        update = require("src/player/update"),
-        keypressed = require("src/player/keypressed"),
-        mousepressed = require("src/player/mousepressed"),
-        hud = {
-            draw = require("src/player/hud/draw"),
-        },
-    }
-    src.entities = {
-        draw = require("src/entities/draw"),
-    }
-
+    src = require("data/src")
     player = require("data/player")
     assets = require("data/assets")
 end
@@ -56,6 +39,7 @@ function love.draw()
     cam:attach()
     src.blocks.draw()
     src.player.draw()
+    src.player.cursor.draw()
     cam:detach()
     src.player.hud.draw()
 end

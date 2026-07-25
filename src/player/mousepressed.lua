@@ -9,9 +9,13 @@ function src.player.mousepressed(mx, my, button)
         return
     end
     if button == 1 then
-        world[ty][tx] = 0
+        if world[ty][tx] > 9 or world[ty][tx] < 9 then
+            world[ty][tx] = 0
+        end
     elseif button == 2 then
-        world[ty][tx] = player.selectedBlock
+        if world[ty][tx] > 9 or world[ty][tx] < 9 then
+            world[ty][tx] = player.selectedBlock
+        end
     end
 end
 
