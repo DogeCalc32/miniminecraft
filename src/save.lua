@@ -1,8 +1,10 @@
 saveLibraries = {}
 
 function savePlayerData()
+    local worldDataJson = json.encode(world:getSaveData())
     local playerDataJson = json.encode(player:getPlayerSaveData())
-    love.filesystem.write("saveData.json",playerDataJson)
+    love.filesystem.write("saveData.json", playerDataJson)
+    love.filesystem.write("world.json", worldDataJson)
     print("file saved")
 end
 
@@ -20,26 +22,11 @@ function loadPlayerData()
     print("done!")
 end
 
-function createWorld()
-    local world = {
-        width = 200,
-        height = 200,
-        tiles = {}
-    }
-
-    for y = 1, world.height do
-        world.tiles[y] = {}
-        for x = 1, world.width do
-            world.tiles[y][x] = 0 -- air
-        end
-    end
-    local data = json.encode(world)
-    love.filesystem.write("world.json", data)
-end
-
 function loadWorld()
+    if love.filesystem.read("world.json") == nil then return end
     local data = love.filesystem.read("world.json")
-    local world = json.decode(data)
+    local worldData = json.decode(data)
+    world = worldData
 end
 
 return saveLibraries

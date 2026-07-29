@@ -20,6 +20,19 @@ world = {
     { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 },
 }
 
+function world:getSaveData()
+    local data = {}
+
+    for y = 1, #self do
+        data[y] = {}
+        for x = 1, #self[y] do
+            data[y][x] = self[y][x]
+        end
+    end
+
+    return data
+end
+
 local function canMove(tx, ty)
     if ty > #world or ty < 1 then
         return false

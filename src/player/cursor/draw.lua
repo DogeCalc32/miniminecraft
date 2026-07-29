@@ -4,7 +4,7 @@ function src.player.cursor.draw()
     local mx, my = love.mouse.getPosition()
     local wx, wy = cam:worldCoords(mx, my)
 
-    local imageWidth, imageHeight = playerSprite:getDimensions()
+    local imageWidth, imageHeight = player.sprite:getDimensions()
     local scaleX = tileSize / imageWidth
     local scaleY = tileSize / imageHeight * 2
 

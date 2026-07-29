@@ -1,10 +1,10 @@
 src.player = {}
 
 function src.player.update(dt)
-    local imageWidth, imageHeight = playerSprite:getDimensions()
+    local imageWidth, imageHeight = player.sprite:getDimensions()
     local scaleX = tileSize / imageWidth
     local scaleY = tileSize / imageHeight * 2
-    gravityDelay = .34
+    gravityDelay = .2
     gravityTimer = gravityTimer + dt --1 / love.timer.getFPS()
 
     if gravityTimer >= gravityDelay then
