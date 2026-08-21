@@ -3,7 +3,7 @@ src.player.hud = {}
 function src.player.hud.draw()
     local guiScale = .15
     love.graphics.setColor(0, .6, 0)
-    love.graphics.print(love.timer.getFPS(), 10, 10)
+    love.graphics.print(math.floor(1 / deltaTime), 10, 10)
     love.graphics.setColor(1, 1, 1)
     local sprite = assets.gui.hud.hotbar
     local spriteWidth, spriteHeight = sprite:getDimensions()

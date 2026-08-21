@@ -1,6 +1,7 @@
 src.player = {}
 
 function src.player.update(dt)
+    deltaTime = dt
     local imageWidth, imageHeight = player.sprite:getDimensions()
     local scaleX = tileSize / imageWidth
     local scaleY = tileSize / imageHeight * 2
