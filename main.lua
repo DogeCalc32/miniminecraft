@@ -1,5 +1,5 @@
 -- main.lua
-
+load = require("src/load")
 function love.load()
     w = love.graphics.getWidth()
     h = love.graphics.getHeight()

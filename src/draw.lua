@@ -6,7 +6,7 @@ function love.draw()
         love.graphics.rectangle("fill", 0, 0, w, h)
 
         cam:attach() -- camera start
-        src.blocks.draw()
+        src.blocks.draw(tileSize)
         src.player.draw()
         src.player.cursor.draw()
         cam:detach() -- camera end

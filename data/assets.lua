@@ -1,15 +1,15 @@
 assets = {
     blocks = {
-        love.graphics.newImage("assets/blocks/grass_side.png"),
-        love.graphics.newImage("assets/blocks/dirt.png"),
-        love.graphics.newImage("assets/blocks/stone.png"),
-        love.graphics.newImage("assets/blocks/cobblestone.png"),
-        love.graphics.newImage("assets/blocks/brick.png"),
-        love.graphics.newImage("assets/blocks/glass.png"),
-        love.graphics.newImage("assets/blocks/furnace_front_off.png"),
-        love.graphics.newImage("assets/blocks/bed_feet_end.png"),
-        love.graphics.newImage("assets/blocks/bedrock.png"),
-        love.graphics.newImage("assets/blocks/gravel.png"),
+        grass = love.graphics.newImage("assets/blocks/grass_side.png"),
+        dirt = love.graphics.newImage("assets/blocks/dirt.png"),
+        stone = love.graphics.newImage("assets/blocks/stone.png"),
+        gravel = love.graphics.newImage("assets/blocks/gravel.png"),
+        -- love.graphics.newImage("assets/blocks/cobblestone.png"),
+        -- love.graphics.newImage("assets/blocks/brick.png"),
+        -- love.graphics.newImage("assets/blocks/glass.png"),
+        -- love.graphics.newImage("assets/blocks/furnace_front_off.png"),
+        bed = love.graphics.newImage("assets/blocks/bed_feet_end.png"),
+        bedrock = love.graphics.newImage("assets/blocks/bedrock.png"),
     },
     player = {
         blockSelection = love.graphics.newImage("assets/player/block_selection.png")
