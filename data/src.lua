@@ -23,4 +23,5 @@ src.player = {
 src.entities = {
     draw = require("src/entities/draw"),
 }
+
 return src

@@ -3,7 +3,7 @@ load = {}
 function love.load()
     w = love.graphics.getWidth()
     h = love.graphics.getHeight()
-    tileSize = 48
+    tileSize = 32
     gravityTimer = 0
     isGameState = true
     love.graphics.setDefaultFilter('nearest', 'nearest')
@@ -13,11 +13,11 @@ function love.load()
     saveLibraries = require("src/save")
     cam = camera()
 
+    assets = require("data/assets")
     player = require("data/player")
     world = require("data/world")
 
     src = require("data/src")
-    assets = require("data/assets")
     input = require("src/input")
     draw = require("src/draw")
     update = require("src/update")

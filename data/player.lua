@@ -1,6 +1,6 @@
 player = {
-    x = 15,
-    y = 10,
+    x = 1,
+    y = 1,
     hp = 20,
 
     inventory = {
@@ -12,7 +12,7 @@ player = {
         },
         armor = { 0, 0, 0, 0 },
         offhand = 0,
-        currentItem = 1
+        currentItem = 1,
     },
 }
 

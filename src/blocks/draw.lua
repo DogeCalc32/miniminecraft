@@ -22,19 +22,20 @@ src.blocks = {}
 function src.blocks.draw(size)
     love.graphics.setColor(1, 1, 1, 1)
     for rowIndex, row in ipairs(world) do
-        for blockIndex, block in ipairs(row) do
+        for blockIndex = 1, #row, 1 do
+            block = row[blockIndex]
             if block == nil then
-                -- comeback to this
+            else
+                local sprite = block.sprite
+
+                local x = block.x * size
+                local y = block.y * size
+                local imageWidth, imageHeight = sprite:getDimensions()
+                local scaleX = size / imageWidth
+                local scaleY = size / imageHeight
+
+                love.graphics.draw(sprite, x, y, nil, scaleX, scaleY)
             end
-            local sprite = block.sprite
-
-            local x = block.x * size
-            local y = block.y * size
-            local imageWidth, imageHeight = sprite:getDimensions()
-            local scaleX = size / imageWidth
-            local scaleY = size / imageHeight
-
-            love.graphics.draw(sprite, x, y, nil, scaleX, scaleY)
         end
     end
 end

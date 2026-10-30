@@ -55,6 +55,16 @@ end
 --     end
 --     table.insert(world, row)
 -- end
+function getRandomBlock()
+    local rnd = math.random(100)
+    if rnd < 30 then
+        return "dirt"
+    end
+    if rnd < 99 then
+        return "stone"
+    end
+    return "bed"
+end
 
 function addBlocks()
     for y = 1, worldHeight, 1 do
@@ -76,47 +86,30 @@ function addBlocks()
     end
 end
 
-function getRandomBlock()
-    local rnd = math.random(100)
-    if rnd < 60 then
-        return "dirt"
-    end
-    if rnd < 90 then
-        return "stone"
-    end
-    return "bed"
-end
+addBlocks()
 
-local function canMove(tx, ty)
-    if ty > #world or ty < 1 then
-        return false
-    end
-    return world[ty][tx] == 0
-end
+-- local function canMove(tx, ty)
+--     if ty > #world or ty < 1 then
+--         return false
+--     end
+--     return world[ty][tx] == 0
+-- end
 
-local function canMove(tx, ty)
-    for _, block in ipairs(world) do
-        if block.x == tx then
-            if block.id > 0 then
-                return true
-            else
-                return false
-            end
-        end
-        if block.y == ty then
-            if block.id > 0 then
-                return true
-            else
-                return false
-            end
-        end -- the world is not drawing because the world table is nil
-    end
+function checkBlockIsNil(tx, ty)
+    return world[ty] == nil or world[ty][tx] == nil
+
+    -- if world[ty] == nil then
+    --     return true
+    -- end
+    -- local block = world[ty][tx]
+    -- local blockIsNil = block == nil
+    -- return blockIsNil
 end
 
 function tryMove(dx, dy)
     local newX = player.x + dx
     local newY = player.y + dy
-    if canMove(newX, newY) and canMove(newX, newY + 1) then
+    if checkBlockIsNil(newX, newY) and checkBlockIsNil(newX, newY + 1) then
         player.x = newX
         player.y = newY
     end

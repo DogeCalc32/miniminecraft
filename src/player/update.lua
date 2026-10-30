@@ -9,7 +9,6 @@ function src.player.update(dt)
     gravityTimer = gravityTimer + dt --1 / love.timer.getFPS()
 
     if gravityTimer >= gravityDelay then
-        print("tick")
         gravityTimer = 0
         tryMove(0, 1)
         player.y = math.max(1, math.min(#world, player.y))

@@ -24,12 +24,8 @@ function src.player.keypressed(key)
     end
     if key == "w" or key == "space" and player.y + 2 < #world then
         gravityTimer = gravityTimer - .1
-        if world[player.y + 2][player.x] >= 1 then
-            tryMove(0, -1)
-        end
+        tryMove(0, -1)
     end
-
-    player.x = math.max(1, math.min(#world[1], player.x))
 end
 
 return src.player.keypressed
